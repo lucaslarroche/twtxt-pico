@@ -1,0 +1,30 @@
+/**
+ * Footer
+ */
+
+footer {
+  line-height: 1;
+  margin-bottom: 2rem;
+
+  @if map-get($breakpoints, "lg") {
+    @media (min-width: map-get($breakpoints, "lg")) {
+      .right {
+        text-align: right;
+      }
+    }
+  }
+
+  a {
+    color: var(--muted-text);
+
+    @if $enable-transitions {
+      transition: color $transition;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--text);
+    }
+  }
+}

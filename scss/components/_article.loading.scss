@@ -1,0 +1,66 @@
+/**
+ * Loading (article.loading)
+ */
+
+article.loading {
+  animation: loading 3s infinite;
+
+  .avatar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--loading);
+  }
+
+  h2, p {
+    height: .5rem;
+    background-color: var(--loading);
+    border-radius: .25rem;
+  }
+
+  h2 {
+    width: 40%;
+    height: 1rem;
+    margin-bottom: .25rem;
+  }
+
+  .user p {
+    width: 20%;
+  }
+
+  p:nth-child(2) {
+    margin-bottom: .5rem;
+  }
+  p:nth-child(3) {
+    width: 60%;
+  }
+
+  .footer {
+    svg {
+      height: .75rem;
+      color: var(--loading);
+
+      &:not(:last-child) {
+        margin-right: .5rem;
+      }
+    }
+  }
+
+  &:nth-of-type(2),
+  &:nth-of-type(5),
+  &:nth-of-type(8) {
+    animation-delay: .1s;
+  }
+
+  &:nth-of-type(3),
+  &:nth-of-type(6),
+  &:nth-of-type(9) {
+    animation-delay: .2s;
+  }
+}
+
+@keyframes loading {
+  0%   { opacity: 1; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}

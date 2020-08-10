@@ -1,0 +1,26 @@
+/**
+ * Sectionning
+ */
+
+
+// Header
+header.container-fluid {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+// Main
+main.container {
+  padding-top: 0;
+
+  @media (max-width: map-get($breakpoints, "sm")-1) {
+    article {
+      margin-left: -$spacing-gutter;
+      margin-right: -$spacing-gutter;
+    }
+
+    & > article {
+      margin-top: 0;
+    }
+  }
+}

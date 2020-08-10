@@ -1,0 +1,53 @@
+/**
+ * Editor (article.editor)
+ */
+
+article.editor {
+  display: none;
+
+  @if map-get($breakpoints, "sm") {
+    @media (min-width: map-get($breakpoints, "sm")) {
+      display: block;
+    }
+  }
+
+  .menu {
+    margin-bottom: $spacing-block/2;
+
+    a {
+      margin-right: .5rem;
+      color: var(--muted-text);
+
+      @if $enable-transitions {
+        transition: color $transition;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: var(--text);
+        text-decoration: none;
+      }
+    }
+  }
+
+  textarea {
+    margin-bottom: $spacing-block/2;
+  }
+
+  button {
+    margin-bottom: 0;
+
+    margin-left: auto;
+
+    @if map-get($breakpoints, "sm") {
+      @media (min-width: map-get($breakpoints, "sm")) {
+        max-width: fit-content;
+      }
+    }
+
+    svg {
+      margin-right: .25rem;
+    }
+  }
+}

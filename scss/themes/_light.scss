@@ -1,0 +1,8 @@
+// Light theme (Default)
+// Can be forced with data-theme="light"
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --background: #{mix($grey-50, $white)};
+  --avatar-border: #{mix($grey-100, $grey-200)};
+  --loading: #{rgba(mix($grey-50, $grey-100), .75)};
+}

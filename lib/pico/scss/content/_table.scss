@@ -1,0 +1,39 @@
+/**
+ * Table
+ */
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+// Cells
+th,
+td {
+  padding: ($spacing-gutter/2) $spacing-gutter;
+  border-bottom: 1px solid var(--table-border);
+  color: var(--muted-text);
+  font-weight: $text-weight;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+// Titles
+th,
+thead td {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+// First row
+thead {
+  th,
+  td {
+    border-bottom: 3px solid var(--table-border);
+  }
+}
+
+// Striping
+tbody tr:nth-child(odd) {
+  background-color: var(--table-stripping);
+}

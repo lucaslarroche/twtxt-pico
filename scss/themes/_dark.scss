@@ -1,0 +1,17 @@
+// Dark theme (Auto)
+// Automatically enabled if user has Dark mode enabled
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --avatar-border: #{mix($grey-800, $grey-700)};
+    --loading: #{rgba($grey-800, .5)};
+  }
+}
+
+
+
+// Dark theme (Forced)
+// Enabled if forced with data-theme="dark"
+[data-theme="dark"] {
+  --avatar-border: #{mix($grey-800, $grey-700)};
+  --loading: #{rgba($grey-800, .5)};
+}

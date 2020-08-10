@@ -1,0 +1,78 @@
+/**
+ * Nav
+ */
+
+nav {
+  background-color: var(--primary);
+  box-shadow: var(--card-shadow);
+  z-index: 999;
+
+  &.close {
+    display: none;
+  }
+
+  ul {
+    width: 100%;
+    margin: auto 0;
+    padding: 0;
+
+    li {
+      margin: 0;
+      list-style: none;
+
+      a {
+        display: block;
+        padding: $spacing-gutter/2 $spacing-gutter;
+        border-bottom: 1px solid rgba(#FFF, .25);
+        color: var(--primary-inverse);
+        list-style: none;
+        text-align: left;
+
+        @if $enable-transitions {
+          transition: color $transition;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: var(--primary-hover);
+          color: var(--primary-inverse);
+          text-decoration: none;
+        }
+      }
+
+      svg {
+        width: 1rem;
+        height: auto;
+        margin-right: .25rem;
+      }
+    }
+  }
+
+  @if map-get($breakpoints, "sm") {
+    @media (min-width: map-get($breakpoints, "sm")) {
+
+      position: absolute;
+      right: $spacing-gutter;
+      margin-top: -$spacing-gutter/4;
+      border-radius: .25rem;
+
+      li {
+
+        &:first-child {
+          a {
+            border-top-right-radius: .25rem;
+            border-top-left-radius: .25rem;
+          }
+        }
+
+        &:last-child {
+          a {
+            border-bottom-right-radius: .25rem;
+            border-bottom-left-radius: .25rem;
+          }
+        }
+      }
+    }
+  }
+}

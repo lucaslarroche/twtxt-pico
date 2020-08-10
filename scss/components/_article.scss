@@ -1,0 +1,192 @@
+/**
+ * Article
+ */
+
+article {
+  overflow: inherit;
+
+  @media (max-width: map-get($breakpoints, "sm")-1) {
+    border-radius: inherit;
+  }
+
+  // Header .grid
+  .grid.header {
+    grid-row-gap: 0;
+    grid-template-columns: 4rem auto auto;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  // Avatar
+  .avatar {
+    a {
+      img {
+        width: 4rem;
+        height: auto;
+        padding: 1px;
+        float: left;
+        border: 2px solid var(--avatar-border);
+        border-radius: 50%;
+        vertical-align: middle;
+
+        @if $enable-transitions {
+          transition: border-color $transition;
+        }
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        img {
+          border-color: var(--primary-hover);
+        }
+      }
+    }
+  }
+
+  // User
+  .user {
+    grid-column: auto / span 2;
+    vertical-align: middle;
+
+    @if map-get($breakpoints, "sm") {
+      @media (min-width: map-get($breakpoints, "sm")) {
+        grid-column: auto;
+      }
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.25rem;
+      line-height: 1.25;
+    }
+
+    // Time
+    p {
+      margin: 0;
+      color: var(--muted-text);
+      line-height: 1;
+    }
+  }
+
+  // Grid image
+  .grid.images {
+    a {
+      border-radius: .5rem;
+
+      img {
+        padding: 1px;
+        border: 1px solid var(--avatar-border);
+        border-radius: .5rem;
+
+        @if $enable-transitions {
+          transition: border-color $transition;
+        }
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        img {
+          border-color: var(--primary-hover);
+        }
+      }
+    }
+    img {
+
+    }
+  }
+
+  // Actions
+  .actions {
+    grid-column: 2 / -1;
+    align-self: baseline;
+    font-size: .75rem;
+    text-align: left;
+
+    @if map-get($breakpoints, "sm") {
+      @media (min-width: map-get($breakpoints, "sm")) {
+        grid-column: auto;
+        text-align: right;
+      }
+    }
+
+    // Links
+    a {
+      color: var(--text);
+
+      @if $enable-transitions {
+        transition: color $transition;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: var(--primary-hover);
+      }
+
+      &:not(:last-child) {
+        margin-right: .5rem;
+      }
+    }
+
+    svg {
+      margin-right: .125rem;
+    }
+  }
+
+  // Footer .grid
+  .footer {
+    margin-top: 1rem;
+    color: var(--muted-text);
+    font-size: .85rem;
+
+    a {
+      color: var(--muted-text);
+
+      @if $enable-transitions {
+        transition: color $transition;
+      }
+
+      svg {
+        width: auto;
+        height: .85rem;
+        margin-right: .125rem;
+        opacity: .5;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: var(--text);
+
+        svg {
+          opacity: 1;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: .5rem;
+      }
+    }
+  }
+}
+
+
+// Interaction for hover capable devices
+// Based on: https://medium.com/@ferie/detect-a-touch-device-with-only-css-9f8e30fa1134
+@media (any-hover: hover) {
+  article {
+
+    .actions {
+      visibility: hidden;
+    }
+
+    // Display actions on rollover
+    &:hover,
+    &:active,
+    &:focus {
+      .actions {
+        visibility: visible;
+      }
+    }
+  }
+}
